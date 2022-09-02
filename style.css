@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'supply';
-    src: url(./GoshaSans-Ultrabold.woff2) format('woff2');
+    src: url(./assets/fonts/GoshaSans-Ultrabold.woff2) format('woff2');
 }
 
 :root{
@@ -39,7 +39,7 @@ h1{
     padding: 0;
     box-sizing: border-box;
     font-family: 'supply';
-    letter-spacing: -0.05em;
+    letter-spacing: -0.03em;
     /* color: white; */
     list-style: none;
     text-decoration: none;
@@ -190,6 +190,8 @@ iframe{
     position: relative;
     width: 100%;
     overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     /* display: flex; */
 }
 
@@ -200,9 +202,13 @@ iframe{
     display: flex;
     justify-content: space-between;
     width: 1450px;
-    overflow: scroll;
 
 }
+
+.mtb__tiles::-webkit-scrollbar, 
+.mtb::-webkit-scrollbar {
+    display: none;
+  }
 
 .mtb__tile{
     position: relative;
@@ -251,6 +257,10 @@ iframe{
     max-width: var(--maximum-width);
 }
 
+.the__list{
+    margin-top: 1rem;
+}
+
 #dates{
     width: 100%;
     padding-top: 100px;
@@ -264,6 +274,26 @@ iframe{
     width: 90%;
     height: 600px;
     max-width: var(--maximum-width);
+}
+
+.gig{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-bottom: 1px solid white;
+}
+
+.gig > div:nth-child(1){
+    flex: 1;
+    text-align: left;
+}
+.gig > div:nth-child(2){
+    flex: 1;
+    text-align: center;
+}
+.gig > div:nth-child(3){
+    flex: 1;
+    text-align: right;
 }
 
 
