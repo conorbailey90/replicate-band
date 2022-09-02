@@ -101,8 +101,8 @@ header{
     padding: 120px 0;
     display: flex;
     justify-content: center;
-    background: linear-gradient(#FFFFFF, #FFFFFF, #03172F) ;
-    /* background: linear-gradient(#FFFFFF, #FFFFFF, #000000) ; */
+    /* background: linear-gradient(#FFFFFF, #FFFFFF, #03172F) ; */
+    background: linear-gradient(#FFFFFF, #FFFFFF, #161616) ;
     /* text-transform: uppercase; */
 }
 
@@ -175,7 +175,8 @@ iframe{
     padding: 100px 0 0 0;
     display: flex;
     justify-content: center;
-    background-color: #03172F;
+    /* background-color: #03172F; */
+    background-color: #161616;
     color: white;
 }
 
@@ -248,7 +249,8 @@ iframe{
     padding-top: 100px;
     display: flex;
     justify-content: center;
-    background-color: #03172F;
+    /* background-color: #03172F; */
+    background-color: #161616;
     color: white;
 }
 
@@ -266,7 +268,8 @@ iframe{
     padding-top: 100px;
     display: flex;
     justify-content: center;
-    background-color: #03172F;
+    /* background-color: #03172F; */
+    background-color: #161616;
     color: white;
 }
 
@@ -302,7 +305,8 @@ iframe{
     padding-top: 100px;
     display: flex;
     justify-content: center;
-    background-color: #03172F;
+    /* background-color: #03172F; */
+    background: linear-gradient(#161616, #000000);
     color: white;
 }
 
