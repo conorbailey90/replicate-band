@@ -8,6 +8,9 @@
     --maximum-width: 1200px;
 }
 
+a{
+    color: black;
+}
 p{
     font-size: 0.8rem;
 }
