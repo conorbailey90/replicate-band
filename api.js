@@ -4,16 +4,17 @@ const gigList = document.querySelector('.gigs__list');
 let members, setList, gigs
 
 async function getApiRef(){
-    const entryUrl = 'https://replicate.prismic.io/api/v2';
+    const entryUrl = 'https://replicateband.prismic.io/api/v2';
     let data = await fetch(entryUrl);
     let res = await data.json();
     let ref = res.refs.filter(ref => ref.id = 'master')[0].ref;
+    console.log(ref)
     callApi(ref);
     
 }
 
 async function callApi(ref){
-    let data = await fetch(`https://replicate.prismic.io/api/v2/documents/search?ref=${ref}`)
+    let data = await fetch(`https://replicateband.prismic.io/api/v2/documents/search?ref=${ref}`)
     let res = await(data.json())
     console.log(res.results)
     members = res.results.filter(result => result.type == 'band_member');
