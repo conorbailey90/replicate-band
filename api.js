@@ -1,3 +1,5 @@
+const iframe = document.querySelector('.iframe__container iframe');
+console.log(iframe)
 const bandSection = document.querySelector('.mtb__tiles');
 const setListElement = document.querySelector('.the__list')
 const gigList = document.querySelector('.gigs__list');
@@ -16,7 +18,9 @@ async function getApiRef(){
 async function callApi(ref){
     let data = await fetch(`https://replicateband.prismic.io/api/v2/documents/search?ref=${ref}`)
     let res = await(data.json())
-    console.log(res.results)
+    
+    iframe.src = `https://www.youtube.com/embed/${res.results.filter(result => result.type == 'homepage_video')[0].data.youtube_embed[0].text}` 
+    // iframeContainer.innerHTML = iframe;
     members = res.results.filter(result => result.type == 'band_member');
     setList = res.results.filter(result => result.type == 'setlist')[0].data.setlist;
     gigs = res.results.filter(result => result.type == 'gig')

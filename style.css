@@ -43,23 +43,88 @@ h1{
     box-sizing: border-box;
     font-family: 'supply';
     letter-spacing: -0.03em;
-    /* color: white; */
     list-style: none;
     text-decoration: none;
-    /* font-weight: 400; */
 }
 
 .red{
     color: rgb(255, 0, 0);
 }
 
+.white{
+    color: white;
+}
+
 html,body{
     scroll-behavior: smooth;
     width: 100%;
-    /* height: 100%; */
-    /* background-color: black;
-    background: linear-gradient(#03172F,#03172F, #000000) */
     background-color: var(--main-bg-color);
+}
+
+.mobile__nav{
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 100;
+    transition: .2s;
+}
+
+.mobile__nav__links{
+    position: relative;
+    top: 25%;
+    display: flex;
+    flex-direction: column;
+    
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile__nav__links li a{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.menu__close{
+    position: absolute;
+    top: 1rem;
+    right: 5vw;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu__close span{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform-origin: center;
+   
+}
+
+.menu__close:hover span{
+
+    background-color: red;
+    
+}
+
+.menu__close span:nth-child(1){
+
+    transform: rotate(45deg);
+}
+
+.menu__close span:nth-child(2){
+   
+    transform: rotate(-45deg);
 }
 
 
@@ -71,15 +136,14 @@ header{
     left: 0;
     width: 100%;
     height: 80px;
-    /* background-color: rgba(0, 0, 0, 0.84); */
     z-index: 10;
-    /* backdrop-filter: blur(10px); */
     background-color: white;
     border-bottom: 2px solid black;
 
 }
 
 .header__container{
+    position: relative;
     width: 90%;
     max-width: var(--maximum-width);
     height: 100%;
@@ -87,6 +151,28 @@ header{
    justify-content: space-between;
    align-items: center;
 }
+
+.menu__open{
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 15px;
+    /* background-color: red; */
+}
+
+.menu__open > span{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
 
 .nav{
     width: 380px;
@@ -147,8 +233,6 @@ li a:hover, i:hover{
 }
 
 .contact__cta:hover{
- 
-
     background-color: rgb(255, 0, 0);
 }
 
@@ -169,9 +253,9 @@ iframe{
     position: absolute;
     top: 0;
     left: 0;
-   width: 100%;
-   height: 100%;
-   border: 10px solid rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    border: 10px solid rgb(0, 0, 0);
 
 }
 #band{
@@ -229,8 +313,6 @@ iframe{
     margin-bottom: 1rem;
 }
 
-
-
 .img__div > img{
     width: 100%;
     height: 100%;
@@ -238,9 +320,6 @@ iframe{
     object-position: center;
 }
 
-.bio{
-    min-height: 200px;
-}
 
 .bio h3, .bio, h5{
     margin-bottom: .5rem;
@@ -278,7 +357,6 @@ iframe{
 
 .dates__container{
     width: 90%;
-    height: 600px;
     max-width: var(--maximum-width);
 }
 
@@ -289,17 +367,9 @@ iframe{
     border-bottom: 1px solid white;
 }
 
-.gig > div:nth-child(1){
+.gig > div{
     flex: 1;
     text-align: left;
-}
-.gig > div:nth-child(2){
-    flex: 1;
-    text-align: center;
-}
-.gig > div:nth-child(3){
-    flex: 1;
-    text-align: right;
 }
 
 
@@ -315,10 +385,22 @@ iframe{
 
 .contact__container{
     width: 90%;
-    height: 600px;
     max-width: var(--maximum-width);
+    padding: 0 0 100px 0;
 }
 
+.socials__contact{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    width: 90px;
+}
+
+
+.contact__li{
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
 
 @media screen and (max-width: 600px) {
   
@@ -350,10 +432,28 @@ header{
     height: 60px;
 }
 
+.mobile__nav.active{
+    opacity: 1;
+    pointer-events:all;
+ }
+
+ .menu__open{
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+   
+}
+
 .nav{
     display: none;
  
 }
+
+#hero{
+    padding: 80px 0 0 0;
+  
+}
+
 
 .hero__title{
     font-size: 3rem;
@@ -366,5 +466,22 @@ header{
     width: 100%;
     padding-top: 56.25%;
    
+}
+
+#band{
+    padding-top: 60px;
+}
+
+#setlist{
+    padding-top: 60px;
+}
+
+#dates{
+    padding-top: 60px;
+
+}
+.contact__li{
+    margin-top: 1rem;
+    font-size: 1rem;
 }
 }
