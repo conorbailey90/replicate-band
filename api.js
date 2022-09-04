@@ -38,6 +38,8 @@ function createMembers(members){
         let imageDiv = document.createElement('div');
         imageDiv.className = 'img__div';
 
+        // imageDiv.style.backgroundImage = `url(${member.data.photo.url})`
+
         let image = document.createElement('img');
         image.src = member.data.photo.url;
 
